@@ -8,6 +8,8 @@ Date: 2025-11-23
 
 import time
 import logging
+import sys
+import getpass
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -475,26 +477,48 @@ class GDIPUAutoLogin:
                 pass
 
 
+def get_user_credentials():
+    """获取用户输入的账号密码"""
+    print("\n" + "="*50)
+    print("广东轻工网络准入认证系统")
+    print("="*50)
+    
+    # 检查命令行参数
+    if len(sys.argv) >= 3:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        print(f"使用命令行参数: 用户名={username}")
+        return username, password
+    
+    # 交互式输入
+    print("请输入登录信息：")
+    username = input("用户名: ").strip()
+    password = getpass.getpass("密码: ").strip()
+    
+    if not username or not password:
+        print("❌ 用户名和密码不能为空")
+        sys.exit(1)
+    
+    return username, password
+
 def main():
     """主函数"""
-    # 从配置文件导入设置
+    # 获取用户输入的账号密码
+    username, password = get_user_credentials()
+    
+    # 从配置文件导入其他设置
     try:
-        from config import USERNAME, PASSWORD, HEADLESS, TIMEOUT
+        from config import HEADLESS, TIMEOUT
     except ImportError:
         print("⚠️  配置文件未找到，使用默认设置")
-        # 默认配置
-        USERNAME = "2023233203314"  # 替换为您的用户名
-        PASSWORD = "hugolee310.."  # 替换为您的密码
         HEADLESS = False
         TIMEOUT = 30
     
     # 创建登录实例
-    login = GDIPUAutoLogin(username=USERNAME, password=PASSWORD, headless=HEADLESS)
+    login = GDIPUAutoLogin(username=username, password=password, headless=HEADLESS)
     
     # 显示操作选择菜单
     print("\n" + "="*50)
-    print("广东轻工网络准入认证系统")
-    print("="*50)
     print("请选择要执行的操作：")
     print("1. 登录系统")
     print("2. 注销系统")
