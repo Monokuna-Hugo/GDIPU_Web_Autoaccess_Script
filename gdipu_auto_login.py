@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 广东轻工网络准入认证自动登录脚本
-Author: Monokuna-hugo
+Author: Monokuna-Hugo
 Date: 2025-11-23
 """
 
@@ -45,7 +45,7 @@ class GDIPUAutoLogin:
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s',
             handlers=[
-                logging.FileHandler('gdiu_login.log', encoding='utf-8'),
+                logging.FileHandler('gdipu_auto_login.log', encoding='utf-8'),
                 logging.StreamHandler()
             ]
         )
@@ -483,8 +483,8 @@ def main():
     except ImportError:
         print("⚠️  配置文件未找到，使用默认设置")
         # 默认配置
-        USERNAME = "2023233203314"  # 替换为您的用户名
-        PASSWORD = "sss"  # 替换为您的密码
+        USERNAME = "你的学号"  # 替换为您的用户名
+        PASSWORD = "你的3.0密码"  # 替换为您的密码
         HEADLESS = False
         TIMEOUT = 30
     
@@ -498,6 +498,7 @@ def main():
     print("请选择要执行的操作：")
     print("1. 登录系统")
     print("2. 注销系统")
+    print("3. 注销再登录系统")
     print("="*50)
     
     while True:
@@ -508,8 +509,26 @@ def main():
         elif choice == "2":
             print("\n🔄 开始执行注销流程...")
             return execute_logout(login)
+        elif choice == "3":
+            print("\n🔄 开始执行注销再登录流程...")
+            return execute_login_and_relogin(login)
         else:
             print("❌ 无效选择，请输入 1 或 2")
+
+def execute_login_and_relogin(login):
+    try:
+        if not login.setup_driver():
+            print("❌ WebDriver初始化失败")
+            return False
+        
+        execute_logout(login)
+        execute_login(login)
+        return True
+        
+    except Exception as e:
+        print(f"执行注销再登录流程时发生错误: {str(e)}")
+        return False
+        
 
 def execute_login(login):
     """执行登录操作"""

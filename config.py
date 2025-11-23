@@ -6,11 +6,11 @@
 """
 
 # 登录凭证配置
-USERNAME = "2023233203314"  # 替换为您的用户名
-PASSWORD = "sss"  # 替换为您的密码
+USERNAME = "你的学号"  # 替换为您的用户名
+PASSWORD = "你的3.0密码"  # 替换为您的密码
 
 # WebDriver配置
-HEADLESS = True  # 是否使用无头模式，True为后台运行，False为显示浏览器窗口
+HEADLESS = True # 是否使用无头模式，True为后台运行，False为显示浏览器窗口
 TIMEOUT = 30      # 页面加载超时时间（秒）
 
 # 日志配置
