@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-这是一个针对广东轻工职业技术大学网络准入认证系统（`http://10.0.5.112/`）的自动登录脚本，使用Selenium WebDriver和BeautifulSoup开发。
+这是一个针对广东轻工职业技术大学网络准入认证系统（`http://10.0.5.112/`）的自动登录脚本，使用Selenium WebDriver开发，用于解决校园网12小时重认证的问题
 
 ## 功能特性
 
@@ -113,7 +113,7 @@ HEADLESS = True  # 后台运行，不显示浏览器窗口
 
 ### 6. 日志系统
 - 实时日志输出到控制台
-- 日志文件保存到 `gdiu_login.log`
+- 日志文件保存到 `gdipu_login.log`
 - 详细的错误信息记录
 
 ### 7. 截图功能
@@ -125,11 +125,11 @@ HEADLESS = True  # 后台运行，不显示浏览器窗口
 
 ```
 GDIPU_web_autoaccess_script/
-├── gdiu_auto_login.py    # 主脚本文件
+├── gdipu_auto_login.py    # 主脚本文件
 ├── config.py             # 配置文件模板
 ├── requirements.txt      # 依赖包列表
 ├── README.md            # 使用说明文档
-└── gdiu_login.log       # 日志文件（运行后生成）
+└── gdipu_login.log       # 日志文件（运行后生成）
 ```
 
 ## 常见问题
@@ -145,11 +145,10 @@ A: 检查以下内容：
 A: 在 `config.py` 中修改 `TIMEOUT` 参数。
 
 ### Q: 脚本运行太慢怎么办？
-A: 可以适当减少等待时间，但要注意网络状况和页面加载速度。
+A: 稍等一会。
 
 ## 安全提示
 
-- 🔒 不要将包含真实密码的配置文件上传到公开仓库
 - 🔒 定期更改密码
 - 🔒 在安全的环境下运行脚本
 
