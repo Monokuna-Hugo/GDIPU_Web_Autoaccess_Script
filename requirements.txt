@@ -1,5 +1,5 @@
-selenium==4.15.0
+selenium==4.38.0
 beautifulsoup4==4.12.2
 requests==2.31.0
-webdriver-manager==4.0.1
+webdriver-manager==4.0.2
 lxml==4.9.3
