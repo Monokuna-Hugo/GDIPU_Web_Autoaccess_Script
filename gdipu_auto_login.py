@@ -14,7 +14,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 
 
@@ -357,47 +356,6 @@ class GDIPUAutoLogin:
             return False
         except Exception as e:
             self.logger.error(f"处理注销确认对话框失败: {str(e)}")
-            return False
-
-    def logout_and_relogin(self):
-        """执行注销再登录操作"""
-        self.logger.info("开始执行注销再登录流程")
-        
-        # 1. 执行注销
-        if self.logout():
-            self.logger.info("注销成功，准备重新登录")
-            
-            # 2. 重新登录
-            # 重新打开网站
-            if not self.open_target_website():
-                self.logger.error("重新打开网站失败")
-                return False
-            
-            # 定位登录元素
-            elements = self.locate_login_elements()
-            if not elements:
-                self.logger.error("重新登录时定位元素失败")
-                return False
-            
-            # 填写登录凭证
-            if not self.fill_login_credentials(elements):
-                self.logger.error("重新登录时填写凭证失败")
-                return False
-            
-            # 点击登录按钮
-            if not self.click_login_button(elements):
-                self.logger.error("重新登录时点击按钮失败")
-                return False
-            
-            # 验证登录状态
-            if self.verify_login_status():
-                self.logger.info("注销再登录流程完成")
-                return True
-            else:
-                self.logger.error("重新登录失败")
-                return False
-        else:
-            self.logger.error("注销失败，无法继续注销再登录流程")
             return False
     
     def take_screenshot(self, filename: str = None):
