@@ -604,7 +604,7 @@ def main():
             print("\n🔄 开始执行注销再登录流程...")
             return operations.execute_login_and_relogin()
         else:
-            print("❌ 无效选择，请输入 1 或 2")
+            print("❌ 无效选择，请输入 1 或 2 或 3")
 
 
 
