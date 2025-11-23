@@ -1,0 +1,420 @@
+2025-11-23 19:44:48,869 - INFO - 开始执行自动登录流程
+2025-11-23 19:44:50,019 - INFO - WebDriver初始化成功
+2025-11-23 19:44:50,019 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:45:00,453 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:45:00,453 - INFO - 网站打开成功
+2025-11-23 19:45:00,460 - INFO - 用户名输入框定位成功
+2025-11-23 19:45:10,483 - WARNING - 元素定位超时: id=password
+2025-11-23 19:45:10,484 - ERROR - 密码输入框定位失败
+2025-11-23 19:45:10,926 - INFO - 截图已保存: element_locate_failed.png
+2025-11-23 19:45:13,294 - INFO - WebDriver已关闭
+2025-11-23 19:45:17,390 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000198900D9450>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/0fea7c5f2d7cea04b8fc7cdbb7dc29ff
+2025-11-23 19:45:21,490 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000198900D96D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/0fea7c5f2d7cea04b8fc7cdbb7dc29ff
+2025-11-23 19:45:25,590 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001988FFFE520>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/0fea7c5f2d7cea04b8fc7cdbb7dc29ff
+2025-11-23 19:45:29,679 - INFO - WebDriver已关闭
+2025-11-23 19:45:51,291 - INFO - 开始执行自动登录流程
+2025-11-23 19:45:52,356 - INFO - WebDriver初始化成功
+2025-11-23 19:45:52,356 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:46:00,931 - INFO - 检测到网络连接错误对话框
+2025-11-23 19:46:00,997 - INFO - 已点击确认按钮
+2025-11-23 19:46:04,816 - ERROR - 处理网络连接错误对话框失败: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d516dd
+	0x7ff677d3d83c
+	0x7ff677d3d79c
+	0x7ff677d3bee0
+	0x7ff677d3cbcb
+	0x7ff677d56fb1
+	0x7ff677d57af5
+	0x7ff677d5c52f
+	0x7ff677d5c5ef
+	0x7ff677da9b27
+	0x7ff677daa58c
+	0x7ff677dfed77
+	0x7ff677dfbaba
+	0x7ff677d9b0ed
+	0x7ff677d9bf63
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677fcb7c4
+	0x7ff677fcb97f
+	0x7ff677fb18e8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:46:04,817 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:46:04,817 - INFO - 网站打开成功
+2025-11-23 19:46:04,885 - ERROR - 登录流程执行异常: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d514e5
+	0x7ff677d9a151
+	0x7ff677dd2a12
+	0x7ff677dcd27c
+	0x7ff677dcc46a
+	0x7ff677d1acb5
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677d1977b
+	0x7ff6783e45f8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:46:04,886 - ERROR - 截图失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d514e5
+	0x7ff677d9a151
+	0x7ff677dd2a12
+	0x7ff677dcd27c
+	0x7ff677dcc46a
+	0x7ff677d1acb5
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677d1977b
+	0x7ff6783e45f8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:46:07,250 - INFO - WebDriver已关闭
+2025-11-23 19:46:07,662 - INFO - 开始执行自动登录流程
+2025-11-23 19:46:08,737 - INFO - WebDriver初始化成功
+2025-11-23 19:46:08,737 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:46:08,972 - INFO - 检测到网络连接错误对话框
+2025-11-23 19:46:09,030 - INFO - 已点击确认按钮
+2025-11-23 19:46:21,066 - INFO - 网络连接错误对话框处理完成
+2025-11-23 19:46:21,066 - INFO - 网络连接错误对话框已处理
+2025-11-23 19:46:21,066 - INFO - 网站打开成功
+2025-11-23 19:46:21,075 - INFO - 用户名输入框定位成功
+2025-11-23 19:46:21,085 - INFO - 密码输入框定位成功
+2025-11-23 19:46:21,093 - INFO - 登录按钮定位成功
+2025-11-23 19:46:21,278 - INFO - 用户名填写完成
+2025-11-23 19:46:21,429 - INFO - 密码填写完成
+2025-11-23 19:46:22,468 - INFO - 登录按钮点击成功
+2025-11-23 19:46:32,474 - WARNING - 登录状态验证: 登录按钮仍然存在，可能登录失败
+2025-11-23 19:46:42,524 - ERROR - === 登录失败 ===
+2025-11-23 19:46:43,001 - INFO - 截图已保存: login_failed.png
+2025-11-23 19:46:45,411 - INFO - WebDriver已关闭
+2025-11-23 19:46:45,852 - INFO - 开始执行自动登录流程
+2025-11-23 19:46:46,975 - INFO - WebDriver初始化成功
+2025-11-23 19:46:46,975 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:46:47,231 - INFO - 检测到网络连接错误对话框
+2025-11-23 19:46:47,294 - INFO - 已点击确认按钮
+2025-11-23 19:46:50,673 - ERROR - 处理网络连接错误对话框失败: ('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2025-11-23 19:46:50,673 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:46:50,673 - INFO - 网站打开成功
+2025-11-23 19:46:54,754 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5C29810>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d/element
+2025-11-23 19:46:58,826 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5C29BD0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d/element
+2025-11-23 19:47:06,990 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5B4EB10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d
+2025-11-23 19:47:11,084 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5BBE7B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d
+2025-11-23 19:47:15,166 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5C15260>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d
+2025-11-23 19:47:19,267 - INFO - WebDriver已关闭
+2025-11-23 19:47:23,363 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5C2DB50>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d
+2025-11-23 19:47:27,449 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000250C5C2F050>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/d2ea84818c0d5f11627bd9bf1e14cf6d
+2025-11-23 19:47:31,930 - INFO - 开始执行自动登录流程
+2025-11-23 19:47:33,001 - INFO - WebDriver初始化成功
+2025-11-23 19:47:33,001 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:47:43,332 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:47:43,333 - INFO - 网站打开成功
+2025-11-23 19:47:43,339 - INFO - 用户名输入框定位成功
+2025-11-23 19:47:43,346 - INFO - 密码输入框定位成功
+2025-11-23 19:47:43,353 - INFO - 登录按钮定位成功
+2025-11-23 19:47:43,432 - INFO - 用户名填写完成
+2025-11-23 19:47:43,499 - INFO - 密码填写完成
+2025-11-23 19:47:44,535 - INFO - 登录按钮点击成功
+2025-11-23 19:48:04,547 - INFO - 登录状态验证: 登录成功
+2025-11-23 19:48:04,547 - INFO - === 登录成功 ===
+2025-11-23 19:48:04,969 - INFO - 截图已保存: login_success.png
+2025-11-23 19:48:04,970 - INFO - 开始执行注销再登录流程
+2025-11-23 19:48:04,970 - INFO - 开始执行注销操作
+2025-11-23 19:48:05,016 - INFO - 已点击注销按钮
+2025-11-23 19:48:05,023 - INFO - 检测到注销确认对话框
+2025-11-23 19:48:05,040 - INFO - 确认对话框内容正确
+2025-11-23 19:48:05,091 - INFO - 已点击确认按钮
+2025-11-23 19:48:17,153 - INFO - 注销确认对话框处理完成
+2025-11-23 19:48:17,153 - INFO - 注销确认对话框处理成功
+2025-11-23 19:48:30,172 - WARNING - 元素定位超时: id=logout
+2025-11-23 19:48:30,172 - INFO - 注销成功
+2025-11-23 19:48:30,172 - INFO - 注销成功，准备重新登录
+2025-11-23 19:48:30,172 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:48:40,260 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:48:40,260 - INFO - 网站打开成功
+2025-11-23 19:48:40,269 - INFO - 用户名输入框定位成功
+2025-11-23 19:48:40,280 - INFO - 密码输入框定位成功
+2025-11-23 19:48:40,293 - INFO - 登录按钮定位成功
+2025-11-23 19:48:40,383 - INFO - 用户名填写完成
+2025-11-23 19:48:40,447 - INFO - 密码填写完成
+2025-11-23 19:48:41,485 - INFO - 登录按钮点击成功
+2025-11-23 19:49:01,500 - INFO - 登录状态验证: 登录成功
+2025-11-23 19:49:01,500 - INFO - 注销再登录流程完成
+2025-11-23 19:49:03,898 - INFO - WebDriver已关闭
+2025-11-23 19:49:04,238 - INFO - 开始执行自动登录流程
+2025-11-23 19:49:05,484 - INFO - WebDriver初始化成功
+2025-11-23 19:49:05,484 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:49:07,566 - ERROR - 处理网络连接错误对话框失败: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d516dd
+	0x7ff677d3d83c
+	0x7ff677d3d79c
+	0x7ff677d3bee0
+	0x7ff677d3cbcb
+	0x7ff677d56fb1
+	0x7ff677d57af5
+	0x7ff677d5c52f
+	0x7ff677d5c5ef
+	0x7ff677da9b27
+	0x7ff677daa58c
+	0x7ff677dfed77
+	0x7ff677dfbaba
+	0x7ff677d9b0ed
+	0x7ff677d9bf63
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677fcb7c4
+	0x7ff677fcb97f
+	0x7ff677fb18e8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:49:07,567 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:49:07,567 - INFO - 网站打开成功
+2025-11-23 19:49:07,627 - ERROR - 登录流程执行异常: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d514e5
+	0x7ff677d9a151
+	0x7ff677dd2a12
+	0x7ff677dcd27c
+	0x7ff677dcc46a
+	0x7ff677d1acb5
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677d1977b
+	0x7ff6783e45f8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:49:07,629 - ERROR - 截图失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d514e5
+	0x7ff677d9a151
+	0x7ff677dd2a12
+	0x7ff677dcd27c
+	0x7ff677dcc46a
+	0x7ff677d1acb5
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677d1977b
+	0x7ff6783e45f8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:49:10,028 - INFO - WebDriver已关闭
+2025-11-23 19:49:10,500 - INFO - 开始执行自动登录流程
+2025-11-23 19:49:11,606 - INFO - WebDriver初始化成功
+2025-11-23 19:49:11,606 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:49:14,533 - ERROR - 处理网络连接错误对话框失败: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d516dd
+	0x7ff677d3d83c
+	0x7ff677d3d79c
+	0x7ff677d3bee0
+	0x7ff677d3cbcb
+	0x7ff677d56fb1
+	0x7ff677d57af5
+	0x7ff677d5c52f
+	0x7ff677d5c5ef
+	0x7ff677da9b27
+	0x7ff677daa58c
+	0x7ff677dfed77
+	0x7ff677dfbaba
+	0x7ff677d9b0ed
+	0x7ff677d9bf63
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677fcb7c4
+	0x7ff677fcb97f
+	0x7ff677fb18e8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:49:14,533 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:49:14,534 - INFO - 网站打开成功
+2025-11-23 19:49:14,596 - ERROR - 登录流程执行异常: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d514e5
+	0x7ff677d9a151
+	0x7ff677dd2a12
+	0x7ff677dcd27c
+	0x7ff677dcc46a
+	0x7ff677d1acb5
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677d1977b
+	0x7ff6783e45f8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:49:14,598 - ERROR - 截图失败: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d514e5
+	0x7ff677d9a151
+	0x7ff677dd2a12
+	0x7ff677dcd27c
+	0x7ff677dcc46a
+	0x7ff677d1acb5
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677d1977b
+	0x7ff6783e45f8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:50:24,855 - INFO - 开始执行自动登录流程
+2025-11-23 19:50:25,916 - INFO - WebDriver初始化成功
+2025-11-23 19:50:25,916 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:50:36,332 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:50:36,332 - INFO - 网站打开成功
+2025-11-23 19:50:36,339 - INFO - 用户名输入框定位成功
+2025-11-23 19:50:44,562 - INFO - 密码输入框定位成功
+2025-11-23 19:50:44,573 - INFO - 登录按钮定位成功
+2025-11-23 19:50:44,576 - ERROR - 填写登录凭证失败: Message: stale element reference: stale element not found
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff67826a235
+	0x7ff677fc2630
+	0x7ff677d516dd
+	0x7ff677d68175
+	0x7ff677d66c63
+	0x7ff677d5a168
+	0x7ff677d5805c
+	0x7ff677d5c52f
+	0x7ff677d5c5ef
+	0x7ff677dac55d
+	0x7ff677d9f6ee
+	0x7ff677dd2b0a
+	0x7ff677d9cc36
+	0x7ff677dfbaba
+	0x7ff677d9b0ed
+	0x7ff677d9bf63
+	0x7ff678295d60
+	0x7ff67828fe8a
+	0x7ff6782b1005
+	0x7ff677fdd71e
+	0x7ff677fe4e1f
+	0x7ff677fcb7c4
+	0x7ff677fcb97f
+	0x7ff677fb18e8
+	0x7ffd75f8e8d7
+	0x7ffd7720c53c
+
+2025-11-23 19:50:45,020 - INFO - 截图已保存: credential_fill_failed.png
+2025-11-23 19:50:47,423 - INFO - WebDriver已关闭
+2025-11-23 19:50:51,521 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CC0E8D9310>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/75f1f5922ea9dec666eb64ac9ca176b1
+2025-11-23 19:50:53,890 - INFO - 开始执行自动登录流程
+2025-11-23 19:50:55,027 - INFO - WebDriver初始化成功
+2025-11-23 19:50:55,028 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:50:55,613 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001CC0E8D9810>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/75f1f5922ea9dec666eb64ac9ca176b1
+2025-11-23 19:51:05,399 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:51:05,399 - INFO - 网站打开成功
+2025-11-23 19:51:05,405 - INFO - 用户名输入框定位成功
+2025-11-23 19:51:05,410 - INFO - 密码输入框定位成功
+2025-11-23 19:51:05,416 - INFO - 登录按钮定位成功
+2025-11-23 19:51:05,487 - INFO - 用户名填写完成
+2025-11-23 19:51:05,538 - INFO - 密码填写完成
+2025-11-23 19:51:06,575 - INFO - 登录按钮点击成功
+2025-11-23 19:51:26,628 - INFO - 登录状态验证: 登录成功
+2025-11-23 19:51:26,628 - INFO - === 登录成功 ===
+2025-11-23 19:51:27,058 - INFO - 截图已保存: login_success.png
+2025-11-23 19:51:39,358 - INFO - WebDriver已关闭
+2025-11-23 19:56:14,111 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:57:51,009 - INFO - WebDriver初始化成功
+2025-11-23 19:57:51,010 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:58:01,225 - INFO - 未检测到网络连接错误对话框
+2025-11-23 19:58:01,226 - INFO - 网站打开成功
+2025-11-23 19:58:01,231 - INFO - 开始执行注销操作
+2025-11-23 19:58:01,277 - INFO - 已点击注销按钮
+2025-11-23 19:58:01,282 - INFO - 检测到注销确认对话框
+2025-11-23 19:58:01,298 - INFO - 确认对话框内容正确
+2025-11-23 19:58:01,343 - INFO - 已点击确认按钮
+2025-11-23 19:58:13,394 - INFO - 注销确认对话框处理完成
+2025-11-23 19:58:13,394 - INFO - 注销确认对话框处理成功
+2025-11-23 19:58:26,438 - WARNING - 元素定位超时: id=logout
+2025-11-23 19:58:26,439 - INFO - 注销成功
+2025-11-23 19:58:28,875 - INFO - WebDriver已关闭
+2025-11-23 19:59:17,231 - INFO - 开始执行自动登录流程
+2025-11-23 19:59:18,283 - INFO - WebDriver初始化成功
+2025-11-23 19:59:18,284 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-23 19:59:18,604 - INFO - 检测到网络连接错误对话框
+2025-11-23 19:59:18,661 - INFO - 已点击确认按钮
+2025-11-23 19:59:30,718 - INFO - 网络连接错误对话框处理完成
+2025-11-23 19:59:30,719 - INFO - 网络连接错误对话框已处理
+2025-11-23 19:59:30,719 - INFO - 网站打开成功
+2025-11-23 19:59:30,726 - INFO - 用户名输入框定位成功
+2025-11-23 19:59:30,733 - INFO - 密码输入框定位成功
+2025-11-23 19:59:30,739 - INFO - 登录按钮定位成功
+2025-11-23 19:59:30,826 - INFO - 用户名填写完成
+2025-11-23 19:59:30,881 - INFO - 密码填写完成
+2025-11-23 19:59:31,914 - INFO - 登录按钮点击成功
+2025-11-23 19:59:51,952 - INFO - 登录状态验证: 登录成功
+2025-11-23 19:59:51,952 - INFO - === 登录成功 ===
+2025-11-23 19:59:52,378 - INFO - 截图已保存: login_success.png
+2025-11-23 19:59:54,838 - INFO - WebDriver已关闭

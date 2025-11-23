@@ -236,7 +236,7 @@ class GDIPUAutoLogin:
         """验证登录状态"""
         try:
             # 等待页面稳定
-            time.sleep(2)
+            time.sleep(5)
             
             # 检查登录按钮是否还存在
             login_button_exists = False
@@ -265,6 +265,139 @@ class GDIPUAutoLogin:
                 
         except Exception as e:
             self.logger.error(f"登录状态验证失败: {str(e)}")
+            return False
+
+    def check_logout_button_exists(self):
+        """检查注销按钮是否存在"""
+        try:
+            logout_button = self.wait_for_element(By.ID, "logout", timeout=5)
+            return logout_button is not None
+        except:
+            return False
+
+    def logout(self):
+        """执行注销操作"""
+        try:
+            self.logger.info("开始执行注销操作")
+            
+            # 检查注销按钮是否存在
+            if not self.check_logout_button_exists():
+                self.logger.warning("注销按钮不存在，可能未登录或已注销")
+                return False
+            
+            # 定位注销按钮
+            logout_button = self.driver.find_element(By.ID, "logout")
+            
+            # 点击注销按钮
+            logout_button.click()
+            self.logger.info("已点击注销按钮")
+            
+            # 处理注销确认对话框
+            if self.handle_logout_confirm_dialog():
+                self.logger.info("注销确认对话框处理成功")
+                
+                # 等待注销完成
+                time.sleep(3)
+                
+                # 验证注销是否成功
+                if not self.check_logout_button_exists():
+                    self.logger.info("注销成功")
+                    return True
+                else:
+                    self.logger.warning("注销按钮仍然存在，注销可能失败")
+                    return False
+            else:
+                self.logger.error("注销确认对话框处理失败")
+                return False
+                
+        except Exception as e:
+            self.logger.error(f"注销操作失败: {str(e)}")
+            return False
+
+    def handle_logout_confirm_dialog(self):
+        """处理注销确认对话框"""
+        try:
+            # 等待对话框出现
+            dialog = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "dialog.confirm.active"))
+            )
+            
+            self.logger.info("检测到注销确认对话框")
+            
+            # 验证对话框内容
+            try:
+                section_text = dialog.find_element(By.CLASS_NAME, "section").text
+                if "您确定要注销吗？" in section_text:
+                    self.logger.info("确认对话框内容正确")
+                else:
+                    self.logger.warning(f"对话框内容不匹配: {section_text}")
+            except:
+                pass
+            
+            # 定位确认按钮
+            confirm_button = dialog.find_element(By.CLASS_NAME, "btn-confirm")
+            
+            # 点击确认按钮
+            confirm_button.click()
+            self.logger.info("已点击确认按钮")
+            
+            # 等待对话框消失
+            WebDriverWait(self.driver, 5).until(
+                EC.invisibility_of_element_located((By.CLASS_NAME, "dialog.confirm.active"))
+            )
+            
+            # 短暂等待确保页面稳定
+            time.sleep(2)
+            
+            self.logger.info("注销确认对话框处理完成")
+            return True
+            
+        except TimeoutException:
+            self.logger.error("注销确认对话框未出现")
+            return False
+        except Exception as e:
+            self.logger.error(f"处理注销确认对话框失败: {str(e)}")
+            return False
+
+    def logout_and_relogin(self):
+        """执行注销再登录操作"""
+        self.logger.info("开始执行注销再登录流程")
+        
+        # 1. 执行注销
+        if self.logout():
+            self.logger.info("注销成功，准备重新登录")
+            
+            # 2. 重新登录
+            # 重新打开网站
+            if not self.open_target_website():
+                self.logger.error("重新打开网站失败")
+                return False
+            
+            # 定位登录元素
+            elements = self.locate_login_elements()
+            if not elements:
+                self.logger.error("重新登录时定位元素失败")
+                return False
+            
+            # 填写登录凭证
+            if not self.fill_login_credentials(elements):
+                self.logger.error("重新登录时填写凭证失败")
+                return False
+            
+            # 点击登录按钮
+            if not self.click_login_button(elements):
+                self.logger.error("重新登录时点击按钮失败")
+                return False
+            
+            # 验证登录状态
+            if self.verify_login_status():
+                self.logger.info("注销再登录流程完成")
+                return True
+            else:
+                self.logger.error("重新登录失败")
+                return False
+        else:
+            self.logger.error("注销失败，无法继续注销再登录流程")
             return False
     
     def take_screenshot(self, filename: str = None):
@@ -358,6 +491,28 @@ def main():
     # 创建登录实例
     login = GDIPUAutoLogin(username=USERNAME, password=PASSWORD, headless=HEADLESS)
     
+    # 显示操作选择菜单
+    print("\n" + "="*50)
+    print("广东轻工网络准入认证系统")
+    print("="*50)
+    print("请选择要执行的操作：")
+    print("1. 登录系统")
+    print("2. 注销系统")
+    print("="*50)
+    
+    while True:
+        choice = input("请选择 (1/2): ").strip()
+        if choice == "1":
+            print("\n🔄 开始执行登录流程...")
+            return execute_login(login)
+        elif choice == "2":
+            print("\n🔄 开始执行注销流程...")
+            return execute_logout(login)
+        else:
+            print("❌ 无效选择，请输入 1 或 2")
+
+def execute_login(login):
+    """执行登录操作"""
     try:
         # 执行登录
         success = login.login()
@@ -371,6 +526,51 @@ def main():
             print("请查看日志文件 gdipu_login.log 获取详细错误信息")
         
         return success
+        
+    except KeyboardInterrupt:
+        print("\n⚠️  用户中断操作")
+        login.cleanup()
+        return False
+    
+    finally:
+        # 确保资源被清理
+        login.cleanup()
+
+def execute_logout(login):
+    """执行注销操作"""
+    try:
+        # 先初始化WebDriver
+        if not login.setup_driver():
+            print("❌ WebDriver初始化失败")
+            return False
+        
+        print("正在检查登录状态...")
+        
+        # 打开网站
+        if not login.open_target_website():
+            print("❌ 无法访问目标网站")
+            return False
+        
+        # 检查是否已登录
+        if login.check_logout_button_exists():
+            print("✅ 检测到已登录状态，开始注销...")
+            
+            # 执行注销
+            logout_success = login.logout()
+            
+            if logout_success:
+                print("✅ 注销成功！")
+                print("注销日志已保存到: gdipu_login.log")
+                print("截图已保存到当前目录")
+                return True
+            else:
+                print("❌ 注销失败！")
+                print("请查看日志文件 gdipu_login.log 获取详细错误信息")
+                return False
+        else:
+            print("⚠️  当前未登录状态，无法执行注销")
+            print("请先选择登录操作")
+            return False
         
     except KeyboardInterrupt:
         print("\n⚠️  用户中断操作")

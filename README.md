@@ -59,7 +59,7 @@ python gdiu_auto_login.py
 
 ### 使用配置文件
 
-修改 `gdiu_auto_login.py` 中的主函数，使用配置文件：
+修改 `gdipu_auto_login.py` 中的主函数，使用配置文件：
 
 ```python
 # 在主函数开头添加
@@ -133,9 +133,6 @@ GDIPU_web_autoaccess_script/
 ```
 
 ## 常见问题
-
-### Q: 脚本运行时报错 "ChromeDriver not found"
-A: 脚本使用webdriver-manager自动管理ChromeDriver，确保网络连接正常即可自动下载。
 
 ### Q: 登录失败怎么办？
 A: 检查以下内容：

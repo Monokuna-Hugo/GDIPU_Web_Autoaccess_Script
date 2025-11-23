@@ -7,7 +7,7 @@
 
 # 登录凭证配置
 USERNAME = "2023233203314"  # 替换为您的用户名
-PASSWORD = "huaaaaaaa"  # 替换为您的密码
+PASSWORD = "hugolee310.."  # 替换为您的密码
 
 # WebDriver配置
 HEADLESS = False  # 是否使用无头模式，True为后台运行，False为显示浏览器窗口
