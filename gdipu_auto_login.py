@@ -474,6 +474,96 @@ class GDIPUAutoLogin:
             except:
                 pass
 
+class Operations:
+    """操作类"""
+    def __init__(self, login):
+        self.login = login
+    
+    def execute_login_and_relogin(self):
+        """执行注销再登录操作"""
+        try:
+            if not self.login.setup_driver():
+                print("❌ WebDriver初始化失败")
+                return False
+            
+            self.execute_logout()
+            self.execute_login()
+            return True
+            
+        except Exception as e:
+            print(f"执行注销再登录流程时发生错误: {str(e)}")
+            return False
+        
+
+    def execute_login(self):
+        """执行登录操作"""
+        try:
+            # 执行登录
+            success = self.login.login()
+            
+            if success:
+                print("\n✅ 登录成功！")
+                print("登录日志已保存到: gdipu_login.log")
+                print("截图已保存到当前目录")
+            else:
+                print("\n❌ 登录失败！")
+                print("请查看日志文件 gdipu_login.log 获取详细错误信息")
+            
+            return success
+            
+        except KeyboardInterrupt:
+            print("\n⚠️  用户中断操作")
+            self.login.cleanup()
+            return False
+        
+        finally:
+            # 确保资源被清理
+            self.login.cleanup()
+
+    def execute_logout(self):
+        """执行注销操作"""
+        try:
+            # 先初始化WebDriver
+            if not self.login.setup_driver():
+                print("❌ WebDriver初始化失败")
+                return False
+            
+            print("正在检查登录状态...")
+            
+            # 打开网站
+            if not self.login.open_target_website():
+                print("❌ 无法访问目标网站")
+                return False
+            
+            # 检查是否已登录
+            if self.login.check_logout_button_exists():
+                print("✅ 检测到已登录状态，开始注销...")
+                
+                # 执行注销
+                logout_success = self.login.logout()
+                
+                if logout_success:
+                    print("✅ 注销成功！")
+                    print("注销日志已保存到: gdipu_login.log")
+                    print("截图已保存到当前目录")
+                    return True
+                else:
+                    print("❌ 注销失败！")
+                    print("请查看日志文件 gdipu_login.log 获取详细错误信息")
+                    return False
+            else:
+                print("⚠️  当前未登录状态，无法执行注销")
+                print("请先选择登录操作")
+                return False
+            
+        except KeyboardInterrupt:
+            print("\n⚠️  用户中断操作")
+            self.login.cleanup()
+            return False
+        
+        finally:
+            # 确保资源被清理
+            self.login.cleanup()
 
 def main():
     """主函数"""
@@ -490,6 +580,7 @@ def main():
     
     # 创建登录实例
     login = GDIPUAutoLogin(username=USERNAME, password=PASSWORD, headless=HEADLESS)
+    operations = Operations(login)
     
     # 显示操作选择菜单
     print("\n" + "="*50)
@@ -505,100 +596,17 @@ def main():
         choice = input("请选择 (1/2/3): ").strip()
         if choice == "1":
             print("\n🔄 开始执行登录流程...")
-            return execute_login(login)
+            return operations.execute_login()
         elif choice == "2":
             print("\n🔄 开始执行注销流程...")
-            return execute_logout(login)
+            return operations.execute_logout()
         elif choice == "3":
             print("\n🔄 开始执行注销再登录流程...")
-            return execute_login_and_relogin(login)
+            return operations.execute_login_and_relogin()
         else:
             print("❌ 无效选择，请输入 1 或 2")
 
-def execute_login_and_relogin(login):
-    try:
-        if not login.setup_driver():
-            print("❌ WebDriver初始化失败")
-            return False
-        
-        execute_logout(login)
-        execute_login(login)
-        return True
-        
-    except Exception as e:
-        print(f"执行注销再登录流程时发生错误: {str(e)}")
-        return False
-        
 
-def execute_login(login):
-    """执行登录操作"""
-    try:
-        # 执行登录
-        success = login.login()
-        
-        if success:
-            print("\n✅ 登录成功！")
-            print("登录日志已保存到: gdipu_login.log")
-            print("截图已保存到当前目录")
-        else:
-            print("\n❌ 登录失败！")
-            print("请查看日志文件 gdipu_login.log 获取详细错误信息")
-        
-        return success
-        
-    except KeyboardInterrupt:
-        print("\n⚠️  用户中断操作")
-        login.cleanup()
-        return False
-    
-    finally:
-        # 确保资源被清理
-        login.cleanup()
-
-def execute_logout(login):
-    """执行注销操作"""
-    try:
-        # 先初始化WebDriver
-        if not login.setup_driver():
-            print("❌ WebDriver初始化失败")
-            return False
-        
-        print("正在检查登录状态...")
-        
-        # 打开网站
-        if not login.open_target_website():
-            print("❌ 无法访问目标网站")
-            return False
-        
-        # 检查是否已登录
-        if login.check_logout_button_exists():
-            print("✅ 检测到已登录状态，开始注销...")
-            
-            # 执行注销
-            logout_success = login.logout()
-            
-            if logout_success:
-                print("✅ 注销成功！")
-                print("注销日志已保存到: gdipu_login.log")
-                print("截图已保存到当前目录")
-                return True
-            else:
-                print("❌ 注销失败！")
-                print("请查看日志文件 gdipu_login.log 获取详细错误信息")
-                return False
-        else:
-            print("⚠️  当前未登录状态，无法执行注销")
-            print("请先选择登录操作")
-            return False
-        
-    except KeyboardInterrupt:
-        print("\n⚠️  用户中断操作")
-        login.cleanup()
-        return False
-    
-    finally:
-        # 确保资源被清理
-        login.cleanup()
 
 
 if __name__ == "__main__":
