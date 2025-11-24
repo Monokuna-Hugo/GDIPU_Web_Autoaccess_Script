@@ -18,7 +18,6 @@
 ## 环境要求
 
 - Python 3.7+
-- Chrome浏览器
 - 稳定的网络连接
 
 ## 安装步骤
@@ -36,7 +35,7 @@ cd GDIPU_web_autoaccess_script
 ### 2. 安装依赖
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 ```
 
 ### 3. 配置登录凭证
@@ -45,7 +44,7 @@ pip install -r requirements.txt
 
 ```python
 # config.py
-USERNAME = "2023233203314"  # 替换为您的用户名
+USERNAME = "你的3.0学号"  # 替换为您的用户名
 PASSWORD = "your_password"  # 替换为您的密码
 ```
 
@@ -54,7 +53,7 @@ PASSWORD = "your_password"  # 替换为您的密码
 ### 基本使用
 
 ```bash
-python gdiu_auto_login.py
+python gdipu_auto_login.py
 ```
 
 ### 使用配置文件
@@ -82,7 +81,7 @@ HEADLESS = True  # 后台运行，不显示浏览器窗口
 ## 脚本功能详解
 
 ### 1. WebDriver初始化
-- 自动下载和管理ChromeDriver
+- ChromeDriver已内置
 - 支持无头模式
 - 设置合理的超时时间
 
@@ -155,17 +154,9 @@ A: 稍等一会。
 ## 技术支持
 
 如果遇到问题，请：
-1. 查看日志文件 `gdiu_login.log`
+1. 查看日志文件 `gdipu_login.log`
 2. 检查截图文件了解页面状态
 3. 确保依赖包已正确安装
 
-## 更新日志
-
-- v1.0.0 (2025-11-23): 初始版本发布
-  - 实现基本登录功能
-  - 添加异常处理和日志系统
-  - 支持无头模式运行
-
----
 
 *注意：本脚本仅供学习和合法使用，请遵守相关法律法规和网站使用条款。*
