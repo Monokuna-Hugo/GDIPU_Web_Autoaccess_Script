@@ -422,6 +422,28 @@ class GDIPUAutoLogin:
             self.logger.error(f"登录流程执行异常: {str(e)}")
             self.take_screenshot("login_exception.png")
             return False
+        
+    def get_user_info(self):
+        """获取当前登录用户信息"""
+        try:
+            # 先初始化WebDriver
+            if not self.setup_driver():
+                print("❌ WebDriver初始化失败")
+                return None
+            
+            # 打开网站
+            if not self.open_target_website():
+                print("❌ 无法访问目标网站")
+                return None
+            
+           #获取用户的IP地址
+            ip_element = self.driver.find_element(By.ID,"ipv4")
+            ip_address = ip_element.text
+            print(f"当前用户IP地址: {ip_address}")
+                
+        except Exception as e:
+            print(f"获取用户信息时发生错误: {str(e)}")
+            return None
     
     def cleanup(self):
         """清理资源"""
@@ -574,10 +596,11 @@ def main():
     print("2. 注销系统")
     print("3. 注销再登录系统")
     print("4. 检查登录状态")
+    print("5. 获取用户信息")
     print("="*50)
     
     while True:
-        choice = input("请选择 (1/2/3/4): ").strip()
+        choice = input("请选择 (1/2/3/4/5): ").strip()
         if choice == "1":
             print("\n🔄 开始执行登录流程...")
             return operations.execute_login()
@@ -586,11 +609,15 @@ def main():
             return operations.execute_logout()
         elif choice == "3":
             print("\n🔄 开始执行注销再登录流程...")
+            return operations.execute_logout_and_relogin()
         elif choice == "4":
             print("\n🔄 检查登录状态...")
             return operations.check_login_status()
+        elif choice == "5":
+            print("\n🔄 获取用户信息...")
+            return login.get_user_info()
         else:
-            print("❌ 无效选择，请输入 1 或 2 或 3 或 4")
+            print("❌ 无效选择，请输入 1 或 2 或 3 或 4 或 5")
 
 
 
