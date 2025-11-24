@@ -523,6 +523,31 @@ class Operations:
             # 确保资源被清理
             self.login.cleanup()
 
+    def check_login_status(self):
+        """检查登录状态"""
+        try:
+            # 先初始化WebDriver
+            if not self.login.setup_driver():
+                print("❌ WebDriver初始化失败")
+                return False
+            
+            # 打开网站
+            if not self.login.open_target_website():
+                print("❌ 无法访问目标网站")
+                return False
+            
+            # 检查是否已登录
+            if self.login.check_logout_button_exists():
+                print("✅ 当前已登录状态")
+                return True
+            else:
+                print("⚠️  当前未登录状态")
+                return False
+            
+        except Exception as e:
+            print(f"检查登录状态时发生错误: {str(e)}")
+            return False
+
 def main():
     """主函数"""
     # 从配置文件导入设置
@@ -548,10 +573,11 @@ def main():
     print("1. 登录系统")
     print("2. 注销系统")
     print("3. 注销再登录系统")
+    print("4. 检查登录状态")
     print("="*50)
     
     while True:
-        choice = input("请选择 (1/2/3): ").strip()
+        choice = input("请选择 (1/2/3/4): ").strip()
         if choice == "1":
             print("\n🔄 开始执行登录流程...")
             return operations.execute_login()
@@ -560,9 +586,11 @@ def main():
             return operations.execute_logout()
         elif choice == "3":
             print("\n🔄 开始执行注销再登录流程...")
-            return operations.execute_login_and_relogin()
+        elif choice == "4":
+            print("\n🔄 检查登录状态...")
+            return operations.check_login_status()
         else:
-            print("❌ 无效选择，请输入 1 或 2 或 3")
+            print("❌ 无效选择，请输入 1 或 2 或 3 或 4")
 
 
 

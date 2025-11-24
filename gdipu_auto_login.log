@@ -1,0 +1,55 @@
+2025-11-24 08:16:16,219 - INFO - WebDriver初始化成功
+2025-11-24 08:16:17,257 - INFO - WebDriver初始化成功
+2025-11-24 08:16:17,257 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-24 08:16:27,442 - INFO - 未检测到网络连接错误对话框
+2025-11-24 08:16:27,442 - INFO - 网站打开成功
+2025-11-24 08:16:27,447 - INFO - 开始执行注销操作
+2025-11-24 08:16:27,493 - INFO - 已点击注销按钮
+2025-11-24 08:16:27,497 - INFO - 检测到注销确认对话框
+2025-11-24 08:16:27,511 - INFO - 确认对话框内容正确
+2025-11-24 08:16:27,545 - INFO - 已点击确认按钮
+2025-11-24 08:16:39,562 - INFO - 注销确认对话框处理完成
+2025-11-24 08:16:39,562 - INFO - 注销确认对话框处理成功
+2025-11-24 08:16:42,566 - WARNING - 注销按钮仍然存在，注销可能失败
+2025-11-24 08:16:44,887 - INFO - WebDriver已关闭
+2025-11-24 08:16:44,888 - INFO - 开始执行自动登录流程
+2025-11-24 08:16:45,937 - INFO - WebDriver初始化成功
+2025-11-24 08:16:45,937 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-24 08:17:15,951 - ERROR - 页面加载超时
+2025-11-24 08:17:18,039 - INFO - WebDriver已关闭
+2025-11-24 08:17:22,123 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000282E3117950>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/8df8abe104d75d07ea980ee87a158177
+2025-11-24 08:17:26,222 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000282E3117CE0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/8df8abe104d75d07ea980ee87a158177
+2025-11-24 08:17:30,320 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000282E31F1370>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/8df8abe104d75d07ea980ee87a158177
+2025-11-24 08:17:34,413 - INFO - WebDriver已关闭
+2025-11-24 08:18:08,475 - INFO - 开始执行自动登录流程
+2025-11-24 08:18:09,498 - INFO - WebDriver初始化成功
+2025-11-24 08:18:09,498 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-24 08:18:39,503 - ERROR - 页面加载超时
+2025-11-24 08:18:41,798 - INFO - WebDriver已关闭
+2025-11-24 08:18:45,884 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000018E6517F610>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/aeb599b3c1b4fe56e1045bfd294095b6
+2025-11-24 08:18:49,984 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000018E6517F4D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/aeb599b3c1b4fe56e1045bfd294095b6
+2025-11-24 08:18:54,078 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000018E65107820>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')': /session/aeb599b3c1b4fe56e1045bfd294095b6
+2025-11-24 08:18:58,354 - INFO - WebDriver已关闭
+2025-11-24 08:19:03,255 - INFO - 开始执行自动登录流程
+2025-11-24 08:20:06,851 - INFO - 开始执行自动登录流程
+2025-11-24 08:20:07,897 - INFO - WebDriver初始化成功
+2025-11-24 08:20:07,897 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-24 08:20:08,039 - INFO - 检测到网络连接错误对话框
+2025-11-24 08:20:08,081 - INFO - 已点击确认按钮
+2025-11-24 08:20:20,141 - INFO - 网络连接错误对话框处理完成
+2025-11-24 08:20:20,141 - INFO - 网络连接错误对话框已处理
+2025-11-24 08:20:20,141 - INFO - 网站打开成功
+2025-11-24 08:20:20,147 - INFO - 用户名输入框定位成功
+2025-11-24 08:20:20,152 - INFO - 密码输入框定位成功
+2025-11-24 08:20:20,158 - INFO - 登录按钮定位成功
+2025-11-24 08:20:20,208 - INFO - 用户名填写完成
+2025-11-24 08:20:20,249 - INFO - 密码填写完成
+2025-11-24 08:20:21,275 - INFO - 登录按钮点击成功
+2025-11-24 08:20:41,331 - INFO - 登录状态验证: 登录成功
+2025-11-24 08:20:41,331 - INFO - === 登录成功 ===
+2025-11-24 08:20:41,563 - INFO - 截图已保存: login_success.png
+2025-11-24 08:20:43,846 - INFO - WebDriver已关闭
+2025-11-24 08:39:00,687 - INFO - WebDriver初始化成功
+2025-11-24 08:39:00,687 - INFO - 正在打开目标网站: http://10.0.5.112/
+2025-11-24 08:39:10,877 - INFO - 未检测到网络连接错误对话框
+2025-11-24 08:39:10,877 - INFO - 网站打开成功
